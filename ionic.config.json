@@ -1,0 +1,7 @@
+{
+  "name": "APAE",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

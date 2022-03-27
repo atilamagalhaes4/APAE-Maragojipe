@@ -1,0 +1,612 @@
+
+<ion-content *ngIf="visualizarTela == true">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/dashboard"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Sistema de cadastro da APAE Maragojipe-Ba</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div  #screen >
+
+
+  <p style="font-size: small">
+    <img class="avatar" [src]="fotoCrianca">
+  </p>
+
+
+  <ion-grid>
+    <p style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      DADOS DA CRIANÇA
+    </p>
+    <ion-row style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "8">
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input  placeholder="Informe o nome da criança" [(ngModel)] ="nome"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input  placeholder="Informe o email de contato" [(ngModel)] ="email"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "1">
+        <ion-item>
+          <ion-label position="stacked">Idade</ion-label>
+          <ion-input  placeholder="Informe a idade da criança" type="tel" [(ngModel)] ="idade"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Data de nascimento</ion-label>
+          <ion-input  placeholder="Data de nascimento." type="tel" maxlength="10"[(ngModel)] ="dataNascimento"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Naturalidade</ion-label>
+          <ion-input  placeholder="Informe a naturalidade." [(ngModel)] ="naturalidade"></ion-input>
+        </ion-item>
+      </ion-col>   
+      <ion-col size = "5">
+        <ion-item>
+          <ion-label position="stacked">Endereço</ion-label>
+          <ion-input  placeholder="Informe o endereço." [(ngModel)] ="endereco"></ion-input>
+        </ion-item>
+      </ion-col>      
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Nome do pai</ion-label>
+          <ion-input  placeholder="Nome do pai." [(ngModel)] ="nomePai"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "2">
+        <ion-item>
+          <ion-label position="stacked">Profissão do pai</ion-label>
+          <ion-input  placeholder="Qual a sua profissão?" [(ngModel)] ="profissaoPai"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Nome da mãe</ion-label>
+          <ion-input  placeholder="Nome do pai." [(ngModel)] ="nomeMae"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "2">
+        <ion-item>
+          <ion-label position="stacked">Profissão da mãe</ion-label>
+          <ion-input  placeholder="Qual a sua profissão?" [(ngModel)] ="profissaoMae"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Sexo</ion-label>
+          <ion-input   [(ngModel)] ="sexo" value="Masculino">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label  position="stacked">Cor</ion-label>
+          <ion-input  [(ngModel)] ="cor">    </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Escolaridade do Pai</ion-label>
+          <ion-input  [(ngModel)] ="escolaridadePai">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Escolaridade da mãe</ion-label>
+          <ion-input  [(ngModel)] ="escolaridadeMae">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Responsável pela criança</ion-label>
+          <ion-input  placeholder="Nome do responsável pela criança." [(ngModel)] ="responsavel"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Nome do entrevistado</ion-label>
+          <ion-input  placeholder="Nome do entrevistado." [(ngModel)] ="nomeEntrevistado"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Telefone</ion-label>
+          <ion-input  placeholder="75 99999999 | 75 99999999." [(ngModel)] ="telefone"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <p  style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      DADOS CLÍNICOS
+    </p>
+    <ion-row style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Duração da gravidez</ion-label>
+          <ion-input  placeholder="Aproximadamente 8 meses e 17 dias." [(ngModel)] ="duracaoGravidez"></ion-input>
+        </ion-item>
+      </ion-col>
+    
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Doenças cronicas ou deficiencia ?</ion-label>
+          <ion-input  placeholder="Sim ou não." [(ngModel)] ="doencas"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Ocorrências na gestação</ion-label>
+          <ion-textarea rows="6" cols="20"[(ngModel)] ="ocorrenciasGestacao" placeholder="Se foi planejada, se teve internação, tipo de parto"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Medicações</ion-label>
+          <ion-textarea rows="6" cols="20"[(ngModel)] ="medicacoes" placeholder="Faz uso de alguma medicação ? Se sim, qual? e com que frequência ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Tem algum tipo de alergia ?</ion-label>
+          <ion-input  placeholder="Tinta, alimento, textura, cheiro, etc." [(ngModel)] ="alergia"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Em relação ao sono</ion-label>
+          <ion-textarea rows="6" cols="20"[(ngModel)] ="sono" placeholder="Dorme bem ? Tem alguma dificuldade específica na hora de dormir ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Acompanhamento</ion-label>
+          <ion-textarea rows="6" [(ngModel)] ="acompanhamentoFora"cols="20" placeholder="Faz acompahamento clinico? Se sim, qual e em que local ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <p  style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      DADOS GERAIS SOBRE A CRIANÇA
+    </p>
+    <ion-row style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "8">
+        <ion-item>
+          <ion-label position="stacked">Vai a escola ?</ion-label>
+          <ion-input  placeholder="Se sim com quem ? pai, mãe, sozinho, etc." [(ngModel)] ="escola"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Tem amigos na escola ?</ion-label>
+          <ion-input  placeholder="Quantos ?" [(ngModel)] ="amigosEscola"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Registro geral</ion-label>
+          <ion-input placeholder="Informe o RG" [(ngModel)] ="dadosRG"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Certidao de pessoa fisica</ion-label>
+          <ion-input placeholder="Informe o CPF" [(ngModel)] ="dadosCPF"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Cartão do SUS</ion-label>
+          <ion-input placeholder="Informe o cartão do SUS" [(ngModel)] ="dadosCartaoSUS"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "3">
+        <ion-item>
+          <ion-label position="stacked">Data de Admissão</ion-label>
+          <ion-input placeholder="Data que entrou pra APAE" [(ngModel)] ="dataAdmissao"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Descreva a personalidade da criança</ion-label>
+          <ion-textarea rows="6" cols="20"[(ngModel)] ="personalidadeCrianca" placeholder="Como é o seu comportamento?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Demonstra habilidades na escrita ?</ion-label>
+          <ion-input  placeholder="Sim ou não" [(ngModel)] ="habilidadeEscrita"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Dificuldade na leitura ?</ion-label>
+          <ion-input  placeholder="Sim ou não" [(ngModel)] ="dificuldadeLeitura"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "4">
+        <ion-item>
+          <ion-label position="stacked">Gosta de estudar ?</ion-label>
+          <ion-input  placeholder="Sim ou não" [(ngModel)] ="gostaEstudar"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Como é a rotina da criança ?</ion-label>
+          <ion-textarea [(ngModel)] ="rotinaCrianca"rows="6" cols="20" placeholder="No seu dia a dia"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">O que ela gosta de fazer em casa ?</ion-label>
+          <ion-textarea rows="6" cols="20"[(ngModel)] ="gostaFazerEmCasa" placeholder="Quais seus pontos de interesse ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Como ele brinca</ion-label>
+          <ion-input  [(ngModel)] ="comoCriancaBrinca">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-item>
+          <ion-label position="stacked">Interage com os pais ?</ion-label>
+          <ion-input [(ngModel)] ="interageComOsPais" >
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Como é a interação dela com os demais ?</ion-label>
+          <ion-textarea rows="6" cols="20" [(ngModel)] ="interacaoComDemais"placeholder="Como é a interação dela com outras crianças, adultos e em outros ambientes ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Qual a principal queixa dos pais quanto ao estado da criança ?</ion-label>
+          <ion-textarea rows="6" cols="20" [(ngModel)] ="queixaPais"placeholder="Principais caracteristicas que simbolizam a queixa"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "12">
+        <ion-item>
+          <ion-label position="stacked">Qual a principal queixa da criança ?</ion-label>
+          <ion-textarea rows="6" cols="20" [(ngModel)] ="queixaCriancas"placeholder="Qual a principal queixa da criança ?"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    
+    <p *ngIf="rg == '../../assets/imagens_adcionais/sem-imagem.png'" style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      RG OU CERTIDÃO DE NASCIMENTO
+    </p>
+    <ion-row *ngIf="rg == '../../assets/imagens_adcionais/sem-imagem.png'" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4">
+      </ion-col>
+      <ion-col size = "4"></ion-col>
+      <ion-col size = "2"></ion-col>
+      <ion-col size = "2">
+        <img alt="DOCUMENTO DE IDENTIFICAÇÃO" style="width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;" id="myImg1" [src]="rg" />
+      </ion-col>
+    </ion-row>
+
+    
+    
+    <p *ngIf="comprovanteResidencia == '../../assets/imagens_adcionais/sem-imagem.png'" style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      COMPROVANTE DE RESIDENCIA
+    </p>
+    <ion-row *ngIf="comprovanteResidencia == '../../assets/imagens_adcionais/sem-imagem.png'" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4">
+      </ion-col>
+      <ion-col size = "4"></ion-col>
+      <ion-col size = "2"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" style="width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;" id="myImg2" [src]="comprovanteResidencia" />
+      </ion-col>
+    </ion-row>
+
+    
+    <p *ngIf="cartaoSUS == '../../assets/imagens_adcionais/sem-imagem.png'" style="font-weight: bold; font-size: large;margin-left: 5%;margin-right: 5%;">
+      Cartão do SUS
+    </p>
+    <ion-row *ngIf="cartaoSUS == '../../assets/imagens_adcionais/sem-imagem.png'" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4">
+      </ion-col>
+      <ion-col size = "4"></ion-col>
+      <ion-col size = "2">
+      </ion-col>
+      <ion-col size = "2">
+        <img alt="Cartão do SUS" style="width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;" id="myImg3" [src]="cartaoSUS" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio1 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio1)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="relatorio2 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio2)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio3 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio3)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio4 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio4)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio5 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio5)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio6 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio6)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio7 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio7)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio8 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio8)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row *ngIf="relatorio9 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio9)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio10 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio10)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row *ngIf="relatorio11 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio11)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="relatorio12 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio12)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio13 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio13)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio14 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio14)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio15 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio15)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio16 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio16)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio17 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio17)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio18 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6"></ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio18)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio19 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6">   </ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio19)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="relatorio20 != ''" style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "4" style="font-weight: bold;">
+        CLIQUE NO PDF PARA ABRI-LO
+      </ion-col>
+      <ion-col size = "6">  </ion-col>
+      <ion-col size = "2">
+        <img alt="COMPROVANTE DE RESIDENCIA" (click)="verPDF(relatorio20)" style="cursor: pointer; width: 70px; height: 70px;margin-left: 10px;margin-top: -10px;"  src="../../assets/imagens_adcionais/pdf.png" />
+      </ion-col>
+    </ion-row>
+
+
+
+
+    <p  style="font-weight: bold; font-size: large;text-align: center ;margin-left: 5%;margin-right: 5%;">
+      PROFISSIONAIS RESPONSÀVEIS PELA CRIANÇA
+    </p>
+    <ion-row style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "2">
+        </ion-col>
+        <ion-col size = "4">
+          <ion-list>
+            <ion-item lines="none" *ngFor="let c of form">
+              <ion-label>{{c.nome}}</ion-label>
+              <ion-checkbox [checked]="c.isChecked" slot="end"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size = "4">
+          <ion-list>
+            <ion-item lines="none" *ngFor="let c of form2">
+              <ion-label>{{c.nome}}</ion-label>
+              <ion-checkbox slot="end" [checked]="c.isChecked"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size = "2">
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+    </div>
+  <ion-grid>
+    <ion-row style="margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+      <ion-col size = "2">
+      </ion-col>
+      <ion-col size = "3" >
+        <ion-button expand="block" color ="danger" (click)="alertaClicavel()"> Imprimir matrícula </ion-button>
+      </ion-col>
+      <ion-col size = "2">
+      </ion-col>
+      <ion-col size = "3" routerLink="/dashboard">
+        <ion-button expand="block" color="primary">Voltar</ion-button>
+      </ion-col>
+      <ion-col size = "2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>
+
+
+  
+  <div style="width: 1px;height: 1px;" id="download">
+    <img #canvas>
+    <a #downloadLink></a>
+  </div>
+</ion-content>

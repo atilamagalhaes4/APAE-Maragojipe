@@ -1,0 +1,153 @@
+<ion-header *ngIf="visualizarTela == true">
+  <ion-toolbar color="primary">
+    <ion-title>Sistema de cadastro da APAE Maragojipe-Ba</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="visualizarTela == true">
+  <ion-grid style="margin-top: 2.5%; margin-bottom: 2.5%">
+    <ion-row style="margin-bottom: 2.5%;">
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('assistente social')">
+          <p>
+            <img
+              src="../../assets/imagens/assistente.png"
+              alt="Assistente social"
+              title="Assistente social"
+            />
+          </p>
+          <p id="texto">Assistente social</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" routerLink="/cadastro" >
+          <p>
+            <img
+              src="../../assets/imagens/cadastro.png"
+              alt="Cadastro"
+              title="Cadastro"
+            />
+          </p>
+          <p id="texto">Cadastro</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('fisioterapeuta')">
+          <p>
+            <img
+              src="../../assets/imagens/fisio.png"
+              alt="Fisioterapeuta"
+              title="Fisioterapeuta"
+            />
+          </p>
+          <p id="texto">Fisioterapeuta</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('fonoaudiologo')">
+          <p>
+            <img
+              src="../../assets/imagens/fono.png"
+              alt="Fonoaudiólogo"
+              title="Fonoaudiólogo"
+            />
+          </p>
+          <p id="texto">Fonoaudiólogo</p>
+        </div>
+      </ion-col>
+      
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('psicopedagogia')">
+          <p>
+            <img
+              src="../../assets/imagens/psicopedagogia.png"
+              alt="Psicopedagogia"
+              title="Psicopedagogia"
+            />
+          </p>
+          <p id="texto">Psicopedagogia</p>
+        </div>
+      </ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 2.5%;">
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" routerLink="/listar">
+          <p>
+            <img
+              src="../../assets/imagens/listar.png"
+              alt="Listar pacientes"
+              title="Listar pacientes"
+            />
+          </p>
+          <p id="texto">Listar pacientes</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('nutricionista')">
+          <p>
+            <img
+              src="../../assets/imagens/nutricionista.png"
+              alt="Nutricionista"
+              title="Nutricionista"
+            />
+          </p>
+          <p id="texto">Nutricionista</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('pedagogia')">
+          <p>
+            <img
+              src="../../assets/imagens/pedagogia.png"
+              alt="Pedagogia"
+              title="Pedagogia"
+            />
+          </p>
+          <p id="texto">Pedagogia</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="verPacientes('psicologa')">
+          <p>
+            <img
+              src="../../assets/imagens/psicologia.png"
+              alt="Psicóloga"
+              title="Psicóloga"
+            />
+          </p>
+          <p id="texto">Psicóloga</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div class="figura2" (click)="presentAlertPrompt()">
+          <p>
+            <img
+              src="../../assets/imagens/redefinir.png"
+              alt="Trocar senha"
+              title="Trocar senha"
+            />
+          </p>
+          <p id="texto">Trocar senha</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-bottom: 2.5%;">
+      <ion-col style="margin: auto;border: thin silver solid" size="2">
+        <div (click)="sair()" class="figura2">
+          <p>
+            <img
+              src="../../assets/imagens/sair.png"
+              alt="Sair"
+              title="Sair"
+            />
+          </p>
+          <p id="texto">Sair</p>
+        </div>
+      </ion-col>
+      <ion-col style="margin: auto;border: none" size="2"></ion-col>
+      <ion-col style="margin: auto;border: none" size="2"></ion-col>
+      <ion-col style="margin: auto;border: none" size="2"></ion-col>
+      <ion-col style="margin: auto;border: none" size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

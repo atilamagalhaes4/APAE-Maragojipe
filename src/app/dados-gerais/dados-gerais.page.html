@@ -1,0 +1,99 @@
+<ion-header *ngIf="visualizarTela == true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/dashboard"></ion-back-button>
+  </ion-buttons>
+
+    <ion-title>Sistema de cadastro da APAE Maragojipe-Ba</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="visualizarTela == true">
+
+  <ion-grid style="margin: 5%;">
+    <ion-row>
+      <ion-col size = "3"></ion-col>
+      <ion-col size = "5">
+        <ion-item>
+          <ion-label>Selecione paciente:</ion-label>
+          <ion-select placeholder="Informe o nome de um paciente" (ionChange)="verSeSelecionou()" [(ngModel)]="idPaciente"  okText="Selecionar" cancelText="Cancelar">
+            <ion-select-option *ngFor="let c of pacientes" [value]="c.id">{{c.nome}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size = "1">
+        <ion-item lines="none" [disabled]="boolVisualizar">
+          <ion-icon class="arrumarVisualizar" routerLink="/visualizar-perfil/{{idPaciente}}" alt="ver" title="visualizar"  color="primary" name="arrow-redo-outline"></ion-icon>
+            </ion-item>
+      </ion-col>
+      <ion-col size = "3"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <label style="margin: 5%; font-weight: bold;">
+    RELATÓRIOS
+  </label>
+
+<ion-list *ngIf="visualizarConteudo == true">
+  <div *ngFor="let c of relatorios" class="comentarios1">
+    <p class="comentarios2">
+      <label style="float: left; margin-left: 5%;">
+        {{c.nomeProfissional}}, {{c.area}}.
+      </label>
+      <label class="verCategoria">
+        comentário {{c.categoria}}
+      </label>
+      <label style="float: right; margin-right: 3%;">
+        {{c.dataRelatorio}}
+      </label>
+    </p>
+    <p class="comentario3">
+      {{c.comentario}}
+    </p>
+  </div>
+</ion-list>
+
+
+
+<ion-list *ngIf="visualizarConteudo == false" style="margin-left: 10%;margin-right: 10%;">
+  <ion-item>
+    <ion-label position="stacked">Nome</ion-label>
+    <ion-input [(ngModel)] = "nome" placeholder="Informe o nome do paciente"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Mae</ion-label>
+    <ion-input  [(ngModel)] = "nomeMae" placeholder="Informe o nome da mãe do paciente"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Comentario</ion-label>
+    <ion-textarea rows="20" cols="30"  [(ngModel)] = "comentario" placeholder="Insira aqui o relatório"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Nome profissional</ion-label>
+    <ion-input  [(ngModel)] = "nomeProfissional" placeholder="Informe o seu nome (nome do profissional)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Categoria</ion-label>
+    <ion-select  [(ngModel)] = "categoria" value="publico">
+      <ion-select-option value="publico">Publico</ion-select-option>
+      <ion-select-option value="privado">privado</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size = "6">
+        <ion-button expand="full" (click)="voltarVisualizacao()" color ="danger">Cancelar</ion-button>
+      </ion-col>
+      <ion-col size = "6">
+        <ion-button (click)="salvarRelatorio()" expand="full" color ="primary">Salvar Relaório</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-list>
+
+
+  <ion-fab *ngIf ="visualizarConteudo == true" vertical="bottom" style="margin-bottom: 5%;margin-right: 5%;" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="criarRelatorio()"  [disabled]="boolVisualizar">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
